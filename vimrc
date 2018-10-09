@@ -5,6 +5,10 @@ autocmd! bufwritepost .vimrc source %
 " Numbers on the side, starting at 1, static
 set number
 
+" Lets get some better buffer movement
+nnoremap ]b :bn<CR>
+nnoremap [b :bp<CR>
+
 " This was a setting that the brotege told me to use. no idea what it does
 set bs=2
 " I am a dirty peasant who uses tabs
@@ -63,7 +67,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='kolor'
 
 " ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
