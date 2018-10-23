@@ -8,6 +8,9 @@ set number
 " Lets get some better buffer movement
 nnoremap ]b :bn<CR>
 nnoremap [b :bp<CR>
+" Lets get some better tab movement
+nnoremap ]t :tabn<CR>
+nnoremap [t :tabp<CR>
 
 " This was a setting that the brotege told me to use. no idea what it does
 set bs=2
@@ -77,7 +80,7 @@ let g:UltiSnipsEditSplit="vertical"
 nnoremap <s-t> :NERDTreeToggle<cr>
 
 " Map the f5 key to compile latex and rmarkdown files
-autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\<space>R<space>--vanilla<enter>
+autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 autocmd Filetype tex	map <F5> :!pdflatex<space>'<c-r>%'<enter>
 
 "" ----- Keybind Apendix -----
