@@ -4,10 +4,13 @@ autocmd! bufwritepost .vimrc source %
 
 " Numbers on the side, starting at 1, static
 set number
+" Lets set hidden to do some buffer magic
+set hidden
 
 " Lets get some better buffer movement
 nnoremap ]b :bn<CR>
 nnoremap [b :bp<CR>
+nnoremap <c-X> :bd!<CR>
 " Lets get some better tab movement
 nnoremap ]t :tabn<CR>
 nnoremap [t :tabp<CR>
@@ -75,9 +78,9 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
-" Shift-T is not used so it goes to NerdTree
-" T for Tree
-nnoremap <s-t> :NERDTreeToggle<cr>
+" Shift-N is not used so it goes to NerdTree
+" N for Nerd
+nnoremap <s-n> :NERDTreeToggle<cr>
 
 " Map the f5 key to compile latex and rmarkdown files
 autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
@@ -85,7 +88,7 @@ autocmd Filetype tex	map <F5> :!pdflatex<space>'<c-r>%'<enter>
 
 "" ----- Keybind Apendix -----
 " F5: compile a .tex or .rmd file using pdftex or R respectively
-" Shift+T: toggle NERDTREE
+" Shift+N: toggle NERDTREE
 " ]c and [c are movement methods between hunks in GitGutter
 " tab expands ultisnips
 " ctrl+b and ctrl+z are used for movement in ultisnips
