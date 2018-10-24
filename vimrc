@@ -4,10 +4,13 @@ autocmd! bufwritepost .vimrc source %
 
 " Numbers on the side, starting at 1, static
 set number
+" Lets set hidden to do some buffer magic
+set hidden
 
 " Lets get some better buffer movement
 nnoremap ]b :bn<CR>
 nnoremap [b :bp<CR>
+nnoremap <c-X> :bd!<CR>
 " Lets get some better tab movement
 nnoremap ]t :tabn<CR>
 nnoremap [t :tabp<CR>
