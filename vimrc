@@ -1,9 +1,14 @@
-" THE ALL POWERFUL CUSTOM VIM CONFIG OF MIKEYON"
+"    /\/\ (_) | _____ _   _  ___  _ __( )__  __   _(_)_ __ ___  _ __ ___
+"   /    \| | |/ / _ \ | | |/ _ \| '_ \/ __| \ \ / / | '_ ` _ \| '__/ __|
+"  / /\/\ \ |   <  __/ |_| | (_) | | | \__ \  \ V /| | | | | | | | | (__
+"  \/    \/_|_|\_\___|\__, |\___/|_| |_|___/   \_/ |_|_| |_| |_|_|  \___|
+"                     |___/
+
 " Automatic reading of vimrc file on change
 autocmd! bufwritepost .vimrc source %
 
-" Numbers on the side, starting at 1, static
-set number
+" Numbers on the side, number on is static, all else is relative
+set number relativenumber
 " Lets set hidden to do some buffer magic
 set hidden
 
@@ -25,6 +30,9 @@ set noexpandtab
 set nobackup
 set nowritebackup
 set noswapfile
+
+" I dislike whitespace
+autocmd BufWritePre * %s/\s\+$//e
 
 " https://youtu.be/oilVq8-F4_Q?t=144
 " colors
@@ -85,6 +93,9 @@ nnoremap <s-n> :NERDTreeToggle<cr>
 " Map the f5 key to compile latex and rmarkdown files
 autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 autocmd Filetype tex	map <F5> :!pdflatex<space>'<c-r>%'<enter>
+autocmd Filetype md	map <F5> :!pandoc -o %:p:r.pdf %<CR>
+" Have Shift f5 pull up the pdf generated
+map <S-F5> :!evince %:p:r.pdf &<CR>
 
 "" ----- Keybind Apendix -----
 " F5: compile a .tex or .rmd file using pdftex or R respectively

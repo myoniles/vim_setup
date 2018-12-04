@@ -12,6 +12,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # download colorscheme
 git clone https://github.com/ashfinal/vim-colors-violet
+echo "call s:HL(\"LineNr\", s:violet, \"\", \"\")" >> ./vim-colors-violet/colors/violet.vim
 mv ./vim-colors-violet/colors/* ~/.vim/colors/
 rm -rf ./vim-colors-violet
 
