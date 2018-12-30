@@ -93,13 +93,19 @@ nnoremap <s-n> :NERDTreeToggle<cr>
 " Map the f5 key to compile latex and rmarkdown files
 autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 autocmd Filetype tex	map <F5> :!pdflatex<space>'<c-r>%'<enter>
+" I don't know why but this line used to work, then afterwards the line refrering to the doc type as markdown worked
 autocmd Filetype md	map <F5> :!pandoc -o %:p:r.pdf %<CR>
+autocmd Filetype markdown	map <F5> :!pandoc -o %:p:r.pdf %<CR>
 " Have Shift f5 pull up the pdf generated
-map <S-F5> :!evince %:p:r.pdf &<CR>
+map <S-F5> :!okular %:p:r.pdf &<CR>
 
 "" ----- Keybind Apendix -----
 " F5: compile a .tex or .rmd file using pdftex or R respectively
+" Shift+F5: open <filename>.pdf
 " Shift+N: toggle NERDTREE
 " ]c and [c are movement methods between hunks in GitGutter
+" ]t and [t are used to move between tabs
+" ]b and [b are used to move between buffers
+" ctrl+X is to exit a buffer ** without saving **
 " tab expands ultisnips
 " ctrl+b and ctrl+z are used for movement in ultisnips
