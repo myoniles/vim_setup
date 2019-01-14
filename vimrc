@@ -11,11 +11,23 @@ autocmd! bufwritepost .vimrc source %
 set number relativenumber
 " Lets set hidden to do some buffer magic
 set hidden
+" define windows and the movement between them
+set splitbelow splitright
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l>
+
+"remap the refresh thing bc that was really useful
+map <C-r> :redraw!<CR>
+
+" tab completion in the menubar
+set wildmenu
 
 " Lets get some better buffer movement
 nnoremap ]b :bn<CR>
 nnoremap [b :bp<CR>
-nnoremap <c-X> :bd!<CR>
+nnoremap <c-X> :w<CR>:bd!<CR>
 " Lets get some better tab movement
 nnoremap ]t :tabn<CR>
 nnoremap [t :tabp<CR>
@@ -26,7 +38,7 @@ set bs=2
 set tabstop=2
 set noexpandtab
 
-" git rid of swap file
+" git rid of swap file for living fast and dangerous
 set nobackup
 set nowritebackup
 set noswapfile
@@ -99,13 +111,19 @@ autocmd Filetype markdown	map <F5> :!pandoc -o %:p:r.pdf %<CR>
 " Have Shift f5 pull up the pdf generated
 map <S-F5> :!okular %:p:r.pdf &<CR>
 
+" run make for c, cpp, run python3
+autocmd Filetype c,cpp map <F5> :!make<CR>
+autocmd Filetype python map <F5> :!python3 %:p<CR>
+
 "" ----- Keybind Apendix -----
-" F5: compile a .tex or .rmd file using pdftex or R respectively
+" F5: compile a .tex, .md, or .rmd file using pdftex, pandoc, or R respectively
+" F5: Run make in a c file or run a python script
 " Shift+F5: open <filename>.pdf
 " Shift+N: toggle NERDTREE
 " ]c and [c are movement methods between hunks in GitGutter
 " ]t and [t are used to move between tabs
 " ]b and [b are used to move between buffers
-" ctrl+X is to exit a buffer ** without saving **
+" ctrl+[hjkl] can move betwen windows
+" ctrl+X is to exit a buffer and automatically save
 " tab expands ultisnips
 " ctrl+b and ctrl+z are used for movement in ultisnips
