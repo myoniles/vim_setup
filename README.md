@@ -4,6 +4,14 @@ Hihowareya. This vimrc started as a skeleton given to me freshman year.
 I have very slowly expanded it and am now at the point that I might as well be [bit-shifting with butterflies](https://www.xkcd.com/378/) if I have to use anything else.
 Feel free to use this to make your life more productive and use changing this vimrc as an excuse to be unproductive.
 
+## To install
+
+```
+git clone https://github.com/myoniles/vim_setup.git
+cd vim_setup
+./config.sh
+```
+
 # Shortcuts
 
 `F5`: this has many uses. It generally will compile or run documents.
