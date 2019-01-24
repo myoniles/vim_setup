@@ -9,6 +9,11 @@ autocmd! bufwritepost .vimrc source %
 
 " Numbers on the side, number on is static, all else is relative
 set number relativenumber
+" Add the ability to toggle them off by pressing the pound key
+" or press the star to only get the absolute, when that convenient
+map * :set relativenumber!<CR>
+map # :set number! relativenumber!<CR>
+
 " Lets set hidden to do some buffer magic
 set hidden
 " define windows and the movement between them
@@ -17,9 +22,6 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l>
-
-"remap the refresh thing bc that was really useful
-map <C-r> :redraw!<CR>
 
 " tab completion in the menubar
 set wildmenu
@@ -38,13 +40,16 @@ set bs=2
 set tabstop=2
 set noexpandtab
 
-" git rid of swap file for living fast and dangerous
+" get rid of swap file for living fast and dangerous
 set nobackup
 set nowritebackup
 set noswapfile
 
 " I dislike whitespace
 autocmd BufWritePre * %s/\s\+$//e
+
+" I can't spell, I'd be a terrible wizard
+map =s :setlocal spell!<CR>
 
 " https://youtu.be/oilVq8-F4_Q?t=144
 " colors
@@ -120,6 +125,8 @@ autocmd Filetype python map <F5> :!python3 %:p<CR>
 " F5: Run make in a c file or run a python script
 " Shift+F5: open <filename>.pdf
 " Shift+N: toggle NERDTREE
+" # will toggle the numbers on and off
+" =s will toggle spellchecking
 " ]c and [c are movement methods between hunks in GitGutter
 " ]t and [t are used to move between tabs
 " ]b and [b are used to move between buffers
