@@ -114,7 +114,7 @@ autocmd Filetype tex	map <F5> :!pdflatex<space>'<c-r>%'<enter>
 autocmd Filetype md	map <F5> :!pandoc -o %:p:r.pdf %<CR>
 autocmd Filetype markdown	map <F5> :!pandoc -o %:p:r.pdf %<CR>
 " Have Shift f5 pull up the pdf generated
-map <S-F5> :!okular %:p:r.pdf &<CR>
+map <S-F5> :!$MIKEPDF %:p:r.pdf &<CR>
 
 " run make for c, cpp, run python3
 autocmd Filetype c,cpp map <F5> :!make<CR>

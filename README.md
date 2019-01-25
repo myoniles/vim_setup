@@ -9,7 +9,17 @@ Feel free to use this to make your life more productive and use changing this vi
 ```
 git clone https://github.com/myoniles/vim_setup.git
 cd vim_setup
-./config.sh
+# You should run as source. This adds a variable to your shell rc file used for opening pdfs
+. ./install.sh
+```
+
+## To update
+
+This just moves the current vimrc file and updates packages
+
+```
+cd vim_setup
+./update.sh
 ```
 
 # Shortcuts
@@ -19,7 +29,13 @@ Right now this only includes c/c++, python, latex, rmarkdown, and markdown but I
 
 `Shift+F5`: Opens the pdf compiled if you were just editing a .tex, .md, or .rmd file.
 
-`Shift+N:` toggle Nerdtree
+`Shift+N:` toggle Nerdtree (N is for NERD)
+
+`#` will toggle the numbers on the side on and off
+
+`*` will toggle relative numbering
+
+`=s` will turn on spellchecking
 
 `]c` and `[c` are movement methods between hunks in GitGutter
 
