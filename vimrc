@@ -14,6 +14,9 @@ set number relativenumber
 map * :set relativenumber!<CR>
 map # :set number! relativenumber!<CR>
 
+" I need layers
+map <C-c> :sh<CR>
+
 " Lets set hidden to do some buffer magic
 set hidden
 " define windows and the movement between them
@@ -51,15 +54,6 @@ autocmd BufWritePre * %s/\s\+$//e
 " I can't spell, I'd be a terrible wizard
 map =s :setlocal spell!<CR>
 
-" https://youtu.be/oilVq8-F4_Q?t=144
-" colors
-set background=dark
-set term=xterm-256color
-set t_Co=256
-" Color scheme available at https://github.com/ashfinal/vim-colors-violet
-colorscheme violet
-syntax on
-
 " Package manager Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -71,6 +65,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'dracula/vim'
 
 " Git stuff
 Plugin 'airblade/vim-gitgutter'
@@ -87,6 +82,18 @@ Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
+
+"" --- Colors were moved down here because dracula is handled by vundle now
+
+" https://youtu.be/oilVq8-F4_Q?t=144
+" colors
+set background=dark
+set term=xterm-256color
+set t_Co=256
+" Color scheme available at https://github.com/ashfinal/vim-colors-violet
+color dracula
+syntax on
+
 
 "" ----- Lets configure the plugins -----
 
