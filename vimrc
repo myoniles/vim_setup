@@ -41,6 +41,7 @@ nnoremap [t :tabp<CR>
 set bs=2
 " I am a dirty peasant who uses tabs
 set tabstop=2
+set shiftwidth=2
 set noexpandtab
 
 " get rid of swap file for living fast and dangerous
@@ -90,7 +91,6 @@ call vundle#end()
 set background=dark
 set term=xterm-256color
 set t_Co=256
-" Color scheme available at https://github.com/ashfinal/vim-colors-violet
 color dracula
 syntax on
 
@@ -106,9 +106,13 @@ let g:airline_theme='kolor'
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<S-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="]u"
+let g:UltiSnipsJumpBackwardTrigger="[u"
 let g:UltiSnipsEditSplit="vertical"
+let g:snips_author="myoniles"
 
 " Shift-N is not used so it goes to NerdTree
 " N for Nerd
@@ -140,4 +144,5 @@ autocmd Filetype python map <F5> :!python3 %:p<CR>
 " ctrl+[hjkl] can move betwen windows
 " ctrl+X is to exit a buffer and automatically save
 " tab expands ultisnips
+" ]u and [u are used to move between tabstops in ultisnip
 " ctrl+b and ctrl+z are used for movement in ultisnips
