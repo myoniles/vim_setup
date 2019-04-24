@@ -54,6 +54,8 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " I can't spell, I'd be a terrible wizard
 map =s :setlocal spell!<CR>
+inoremap [z <c-g>u<Esc>[s1z=`]a<c-g>u
+inoremap z] <c-g>u<Esc>s]1z=`]a<c-g>u
 
 " Package manager Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -78,6 +80,8 @@ Plugin 'plasticboy/vim-markdown'
 " Snippet magic!
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+
 
 " File exploration
 Plugin 'scrooloose/nerdtree'
