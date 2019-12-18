@@ -54,8 +54,6 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " I can't spell, I'd be a terrible wizard
 map =s :setlocal spell!<CR>
-inoremap [z <c-g>u<Esc>[s1z=`]a<c-g>u
-inoremap z] <c-g>u<Esc>s]1z=`]a<c-g>u
 
 " Package manager Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -80,7 +78,7 @@ Plugin 'plasticboy/vim-markdown'
 " Snippet magic!
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+" let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 
 " File exploration
@@ -116,7 +114,8 @@ let g:UltiSnipsExpandTrigger="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="]u"
 let g:UltiSnipsJumpBackwardTrigger="[u"
 let g:UltiSnipsEditSplit="vertical"
-let g:snips_author="myoniles"
+let g:snips_author="Michael Yoniles"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 " Shift-N is not used so it goes to NerdTree
 " N for Nerd
